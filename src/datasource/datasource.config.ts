@@ -1,5 +1,6 @@
 import { SequelizeOptions } from 'sequelize-typescript';
 import { ConfigService } from '@nestjs/config';
+import { Models } from './datasource.model';
 
 export const sequelizeConfig: SequelizeOptions = {
     dialect: 'postgres',
@@ -9,5 +10,5 @@ export const sequelizeConfig: SequelizeOptions = {
     password: 'postgres',
     database: 'my_local_db',
     logging: false,
-    models: [],
+    models: [...Models],
 }; 

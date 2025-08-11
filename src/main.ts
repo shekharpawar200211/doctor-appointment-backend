@@ -18,8 +18,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
   app.setGlobalPrefix('/v1');
-  app.useGlobalGuards(app.get(AuthGuard));
-
   const port = Number(configService.get('PORT')) || 3000;
   await app.listen(port);
   console.log(`Server started`);
